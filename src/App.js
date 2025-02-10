@@ -7,8 +7,8 @@ function App() {
   return (
     <div className="App">
       <div className = "container">
+        <Weather defaultCity="New York" />
   
-      <Weather />
    
     <footer>
       This project was coded by 👩🏻‍💻 <a href="https://github.com/belram990">Donabel Liotta</a>{" "}
