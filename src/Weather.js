@@ -26,7 +26,7 @@ function handleResponse(response){
 function search (){
 
     let apiKey = "e48bbeefa4cbc305ad9334597oa8t957";
-    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=imperial`;
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
 }
 

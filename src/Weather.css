@@ -48,6 +48,7 @@
 }
 
 
+
 .Weather .value{
     font-weight: 600;
     font-size: 64px;
@@ -62,3 +63,14 @@
         line-height: 1;
 
 }
+
+.Weather .unit{
+ font-weight: 900;
+}
+
+.Weather a{
+    font-weight:normal ;
+    color:#878787;
+    text-decoration:none;
+}
+
