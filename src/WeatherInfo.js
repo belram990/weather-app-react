@@ -1,5 +1,6 @@
 import React from "react";
 import DateFormat from "./DateFormat";
+import WeatherIcon from "./WeatherIcon";
 
 
 export default function WeatherInfo (props){
@@ -12,14 +13,16 @@ export default function WeatherInfo (props){
         </li>
     <li className="text-capitalize">{props.data.description}</li>
 </ul>
-<div className="row ">
-    <div className="col-6 ">
-    <img src="{props.iconUrl}" alt={props.description} />
+<div className="row mt-3">
+    <div className="col-7">
+
+    <WeatherIcon code={props.data.icon} alt={props.data.description} />  
+   
     <span className="value">{Math.round(props.data.temperature)}</span>
     <span className="unit">°F</span>
     
 </div>
-<div className="col-6 mt-3">
+<div className="col-3 mt-3 description">      
     <ul>
         <li>
             Humidity: {props.data.humidity}%
@@ -28,9 +31,11 @@ export default function WeatherInfo (props){
             Wind: {props.data.wind}mph
         </li>
     </ul>
-</div>
     </div>
+ </div>
     </div>
+   
+    
     );
 
 }

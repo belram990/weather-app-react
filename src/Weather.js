@@ -20,7 +20,7 @@ function handleResponse(response){
         country: response.data.country,
         date: new Date (response.data.time * 1000),
         description: response.data.condition.description,
-        iconUrl:`http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon_url}.png`
+        icon: response.data.condition.icon
     });
 }
 function search (){
