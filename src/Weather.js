@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
+import DateFormat from "./DateFormat";
+
 import "./Weather.css";
 
 export default function Weather (props){
@@ -7,6 +9,7 @@ export default function Weather (props){
 let [weatherData, setWeatherData] = useState({ready: false});
 
 function handleResponse(response){
+    
     setWeatherData({
         ready: true,
         temperature: response.data.temperature.current,
@@ -14,9 +17,9 @@ function handleResponse(response){
         humidity: response.data.temperature.humidity,
         city: response.data.city,
         country: response.data.country,
-        date: "Monday 11:00",
+        date: new Date (response.data.time * 1000),
         description: response.data.condition.description,
-        icon: response.data.condition.icon_url
+        iconUrl:"http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-day.png"
     });
 }
 if (weatherData.ready){
@@ -34,12 +37,14 @@ if (weatherData.ready){
             </form>
 <h1>{weatherData.city},{" "}{weatherData.country}</h1>
 <ul>
-    <li>Monday 11:00 AM</li>
+    <li>
+        <DateFormat date={weatherData.date} />
+        </li>
     <li className="text-capitalize">{weatherData.description}</li>
 </ul>
 <div className="row ">
     <div className="col-6 ">
-    <img src="{weatherData.icon}" />
+    <img src="{weatherData.iconUrl}" />
     <span className="value">{Math.round(weatherData.temperature)}</span>
     <span className="unit">°F</span>
     
