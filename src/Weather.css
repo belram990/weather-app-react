@@ -17,10 +17,11 @@
 }
 
 .Weather h1{
-    font-size: 24px;
-    font-weight: 400;
+    font-size: 28px;
+    font-weight: 600;
     line-height: 29px;
     margin: 20px 0 0 0;
+    color: #393e46;
     
 }
 
@@ -38,6 +39,10 @@
 
 }
 
+.Weather .WeatherTemprature{
+    color:#5c5470;
+}
+
 .Weather canvas{
    position: relative;
     top:4px;
@@ -45,6 +50,7 @@
     height: 60px;
     display: inline-block;
     margin-right: 10px;
+   
 }
 
 
@@ -70,7 +76,7 @@
 
 .Weather a{
     font-weight:normal ;
-    color:#878787;
+     color: #393e46;
     text-decoration:none;
 }
 
