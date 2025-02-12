@@ -46,19 +46,15 @@
 .Weather canvas{
    position: relative;
     top:4px;
-    width: 60px;
-    height: 60px;
     display: inline-block;
-    margin-right: 10px;
+  
    
 }
-
-
 
 .Weather .value{
     font-weight: 600;
     font-size: 64px;
-    
+    margin-left: 5px;
 
 }
 
