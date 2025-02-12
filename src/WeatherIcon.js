@@ -5,7 +5,7 @@ import "./Weather.css";
 
 
 export default function WeatherIcon (props){
-   console.log(props.code);
+  
    let codeMapping = {
 "clear-sky-day": "CLEAR_DAY",
 "clear-sky-night": "CLEAR_NIGHT",
@@ -15,6 +15,8 @@ export default function WeatherIcon (props){
 "scattered-clouds-night": "PARTLY_CLOUDY_NIGHT",
 "broken-clouds-day": "CLOUDY",
 "broken-clouds-night": "CLOUDY",
+"rain-day": "RAIN",
+"rain-night": "RAIN",
 "shower-rain-day": "RAIN",
 "shower-rain-night": "RAIN",
 "thunderstorm-day": "RAIN",
