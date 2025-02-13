@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import axios from "axios";
-import WeatherIcon from "./WeatherIcon";
+
+import DailyForecast from "./DailyForecast";
 
 import "./WeatherForecast.css";
 
@@ -20,15 +21,17 @@ console.log(forecast)
 return (
     <div className="WeatherForecast">
         <div className="row">
-            <div className="col">
-                <div className="DailyForcast">Wed</div>
-                <WeatherIcon code="snow-day" size={35} />
-                <div className="DailayTemperature">
-                    <span className="MaxTemperature">19°</span>
-                    <span className="MinTemperature">10°</span>
-
-                </div>
+            {forecast.map(function(dailyForcast, index){
+                if (index < 6){
+                return(
+                     <div className="col" key={index}>
+               <DailyForecast data={dailyForcast} />
             </div>
+                );
+            }
+            })}
+           
+            
         </div>
     </div> 
 );
@@ -37,7 +40,7 @@ return (
    let apiKey = "e48bbeefa4cbc305ad9334597oa8t957";
     let latitude = props.coordinates.latitude;
     let longitude = props.coordinates.longitude;
-    let apiURL = `https://api.shecodes.io/weather/v1/current?lon=${longitude}&lat=${latitude}&key=${apiKey}&units=metric`;
+    let apiURL = `https://api.shecodes.io/weather/v1/forecast?lon=${longitude}&lat=${latitude}&key=${apiKey}&units=metric`;
    axios.get(apiURL).then(handleResponse);
 
    return null;
