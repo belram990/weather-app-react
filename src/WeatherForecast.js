@@ -31,10 +31,10 @@ return (
                <DailyForecast data={dailyForcast} />
             </div>
                 );
+            } else {
+                return null;
             }
             })}
-           
-            
         </div>
     </div> 
 );
